@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kongu Jobs Employment Agency in Udumalpet connects job seekers and employers.">
+  <title>Kongu Jobs | Employment Agency, Udumalpet</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <style>
+    :root {
+      --navy: #09245a;
+      --navy-2: #123777;
+      --green: #16823b;
+      --orange: #f36b13;
+      --gold: #ffd438;
+      --ink: #1b2638;
+      --muted: #657184;
+      --paper: #f6f8fc;
+      --white: #fff;
+      --line: #e3e8f0;
+      --shadow: 0 16px 44px rgba(9,36,90,.09);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    body { margin: 0; font-family: Inter, Arial, sans-serif; color: var(--ink); background: var(--white); line-height: 1.65; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .container { width: min(1160px, 91%); margin-inline: auto; }
+    .topbar { background: var(--navy); color: #fff; font-size: .88rem; }
+    .topbar-inner { min-height: 38px; display: flex; justify-content: space-between; align-items: center; gap: 14px; flex-wrap: wrap; padding: 6px 0; }
+    .topbar a { color: #fff; }
+    .topbar i { color: var(--gold); margin-right: 7px; }
+    header { position: sticky; top: 0; z-index: 20; background: rgba(255,255,255,.96); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
+    .navbar { min-height: 88px; display: flex; justify-content: space-between; align-items: center; gap: 22px; }
+    .brand { display: flex; align-items: center; gap: 13px; min-width: 0; }
+    .brand-logo { width: 72px; height: 72px; object-fit: contain; border-radius: 12px; flex: 0 0 auto; }
+    .brand-title { display: block; color: var(--navy); font-weight: 800; font-size: 1.05rem; line-height: 1.25; letter-spacing: .025em; }
+    .brand-subtitle { display: block; color: var(--muted); font-size: .75rem; margin-top: 4px; }
+    nav { display: flex; align-items: center; justify-content: flex-end; flex-wrap: wrap; gap: 22px; }
+    nav a { color: #344156; font-size: .9rem; font-weight: 600; }
+    nav a:hover { color: var(--orange); }
+    .nav-cta { background: var(--green); color: #fff !important; padding: 10px 15px; border-radius: 9px; }
+    .hero { overflow: hidden; position: relative; background: radial-gradient(circle at 85% 20%, rgba(243,107,19,.16), transparent 27%), linear-gradient(120deg, #f7f9ff 0%, #fff 65%, #f1f8f0 100%); padding: 84px 0 78px; }
+    .hero-grid { display: grid; grid-template-columns: 1.15fr .85fr; align-items: center; gap: 45px; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 9px; color: var(--green); font-size: .78rem; font-weight: 800; text-transform: uppercase; letter-spacing: .12em; }
+    .eyebrow:before { content: ""; width: 25px; height: 3px; border-radius: 3px; background: var(--orange); }
+    h1 { color: var(--navy); font-size: clamp(2.5rem, 5.2vw, 4.55rem); line-height: 1.08; letter-spacing: -.045em; margin: 18px 0; }
+    h1 span { color: var(--orange); }
+    .hero p { color: var(--muted); font-size: 1.08rem; max-width: 630px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    .btn { display: inline-flex; justify-content: center; align-items: center; gap: 9px; border: 0; border-radius: 10px; padding: 13px 19px; font: inherit; font-weight: 700; cursor: pointer; transition: transform .18s, box-shadow .18s; }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px #09245a20; }
+    .btn-primary { background: var(--green); color: #fff; }
+    .btn-secondary { background: #fff; color: var(--navy); border: 1px solid var(--line); }
+    .btn-orange { background: var(--orange); color: #fff; }
+    .hero-art { display: flex; justify-content: center; align-items: center; }
+    .hero-logo { width: min(100%, 430px); max-height: 440px; object-fit: contain; filter: drop-shadow(0 18px 25px rgba(9,36,90,.10)); }
+    .trust-row { display: flex; flex-wrap: wrap; gap: 17px 24px; margin-top: 28px; color: #4c596c; font-size: .88rem; }
+    .trust-row i { color: var(--green); margin-right: 7px; }
+    section { padding: 78px 0; }
+    .section-head { max-width: 700px; margin-bottom: 32px; }
+    .section-head h2 { color: var(--navy); font-size: clamp(1.9rem, 3.5vw, 2.75rem); line-height: 1.2; letter-spacing: -.03em; margin: 12px 0; }
+    .section-head p { color: var(--muted); margin: 0; }
+    .center { text-align: center; margin-inline: auto; }
+    .center .eyebrow { justify-content: center; }
+    .soft-section { background: var(--paper); }
+    .cards { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 20px; }
+    .card { padding: 27px; background: #fff; border: 1px solid var(--line); border-radius: 17px; box-shadow: 0 8px 26px rgba(9,36,90,.035); }
+    .icon-box { width: 54px; height: 54px; display: grid; place-items: center; border-radius: 15px; background: #eaf5ed; color: var(--green); font-size: 1.35rem; }
+    .card:nth-child(3n+2) .icon-box { background: #fff0e6; color: var(--orange); }
+    .card h3 { margin: 17px 0 8px; color: var(--navy); font-size: 1.14rem; }
+    .card p { margin: 0 0 14px; color: var(--muted); font-size: .95rem; }
+    .text-link { display: inline-flex; align-items: center; gap: 7px; color: var(--green); font-weight: 700; font-size: .9rem; }
+    .notice { background: #fff7e4; color: #765016; border: 1px solid #f4dfaa; border-radius: 10px; padding: 13px 16px; margin-bottom: 22px; font-size: .9rem; }
+    .notice i { margin-right: 8px; }
+    .tag { display: inline-block; color: #765016; background: #fff3d4; border-radius: 30px; padding: 4px 10px; font-size: .72rem; font-weight: 700; }
+    .about-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 42px; align-items: center; }
+    .about-panel { background: var(--navy); color: #fff; border-radius: 22px; padding: 32px; position: relative; overflow: hidden; }
+    .about-panel:after { content: ""; position: absolute; width: 190px; height: 190px; right: -70px; bottom: -90px; border: 25px solid #ffffff12; border-radius: 50%; }
+    .about-panel h3 { font-size: 1.6rem; margin: 0 0 12px; }
+    .about-panel p { color: #e0e8f7; }
+    .check-list { list-style: none; padding: 0; margin: 22px 0 0; }
+    .check-list li { margin: 10px 0; }
+    .check-list i { color: var(--gold); margin-right: 10px; }
+    .form-layout { display: grid; grid-template-columns: .78fr 1.22fr; gap: 30px; align-items: start; }
+    .form-aside { background: var(--navy); color: #fff; border-radius: 20px; padding: 30px; }
+    .form-aside h3 { margin-top: 0; font-size: 1.5rem; }
+    .form-aside p, .form-aside li { color: #e1e9f7; }
+    .form-aside .icon-box { background: #ffffff18; color: var(--gold); margin-bottom: 20px; }
+    .form-aside ol { padding-left: 21px; }
+    .form-aside li { margin: 12px 0; }
+    .form-panel { background: #fff; border: 1px solid var(--line); border-radius: 20px; padding: 30px; box-shadow: var(--shadow); }
+    .form-panel h3 { color: var(--navy); margin-top: 0; }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 17px; }
+    .field { display: flex; flex-direction: column; gap: 7px; }
+    .field.full { grid-column: 1 / -1; }
+    label { color: #344156; font-weight: 700; font-size: .88rem; }
+    input, select, textarea { width: 100%; min-width: 0; padding: 12px 13px; border: 1px solid #d8dfeb; border-radius: 9px; background: #fff; color: var(--ink); font: inherit; font-size: .93rem; }
+    input:focus, select:focus, textarea:focus { outline: 3px solid #16823b20; border-color: var(--green); }
+    input[type=file] { padding: 10px; }
+    .help { color: var(--muted); font-size: .78rem; }
+    .consent { display: flex; align-items: flex-start; gap: 10px; font-weight: 500; }
+    .consent input { width: auto; margin-top: 6px; }
+    .form-panel .btn { width: 100%; margin-top: 20px; }
+    .form-status { min-height: 24px; font-size: .9rem; font-weight: 600; overflow-wrap: anywhere; }
+    .contact-grid .card { height: 100%; }
+    .contact-grid .card p { overflow-wrap: anywhere; }
+    .whatsapp-band { margin-top: 30px; background: #eaf7ee; border: 1px solid #d1ebd9; padding: 23px; border-radius: 15px; display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
+    .whatsapp-band h3 { color: var(--navy); margin: 0 0 4px; }
+    .whatsapp-band p { color: var(--muted); margin: 0; }
+    footer { background: #071b43; color: #e3eafa; padding: 30px 0; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 15px; flex-wrap: wrap; font-size: .85rem; }
+    .footer-inner a { color: var(--gold); }
+    .floating-wa { position: fixed; z-index: 25; right: 20px; bottom: 20px; width: 58px; height: 58px; border-radius: 50%; display: grid; place-items: center; color: #fff; background: #20b75a; font-size: 1.8rem; box-shadow: 0 8px 25px #0003; }
+    .floating-wa:hover { transform: translateY(-2px); }
+    @media (max-width: 900px) {
+      .hero-grid, .about-grid, .form-layout { grid-template-columns: 1fr; }
+      .hero-art { order: -1; }
+      .hero-logo { width: min(60%, 300px); max-height: 280px; }
+      .cards { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .navbar { padding: 10px 0; flex-wrap: wrap; }
+      nav { justify-content: flex-start; padding-bottom: 10px; gap: 15px; }
+    }
+    @media (max-width: 600px) {
+      .topbar-inner { justify-content: center; }
+      .brand-logo { width: 55px; height: 55px; }
+      .brand-title { font-size: .9rem; }
+      .brand-subtitle { font-size: .68rem; }
+      nav { gap: 10px 14px; }
+      nav a { font-size: .8rem; }
+      .hero { padding: 45px 0 58px; }
+      .hero-logo { width: min(75%, 250px); }
+      section { padding: 58px 0; }
+      .cards, .form-grid { grid-template-columns: 1fr; }
+      .field.full { grid-column: auto; }
+      .card, .form-panel, .form-aside { padding: 22px; }
+      .floating-wa { right: 14px; bottom: 14px; width: 52px; height: 52px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <span><i class="fa-solid fa-location-dot"></i>UKP-Complex, Udumalpet, Tamil Nadu</span>
+      <span><a href="tel:+917373537833"><i class="fa-solid fa-phone"></i>7373537833</a> &nbsp; · &nbsp; <a href="mailto:cseemploymentagency@gmail.com"><i class="fa-solid fa-envelope"></i>Email us</a></span>
+    </div>
+  </div>
+
+  <header>
+    <div class="container navbar">
+      <a class="brand" href="#home" aria-label="Kongu Jobs home">
+        <img class="brand-logo" src="logo.png" alt="Kongu Jobs Employment Agency logo">
+        <span>
+          <span class="brand-title">KONGU JOBS</span>
+          <span class="brand-subtitle">Employment Agency · Udumalpet</span>
+        </span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#jobs">Job Categories</a>
+        <a href="#register">Candidate Registration</a>
+        <a href="#contact">Contact</a>
+        <a class="nav-cta" href="#employers">For Employers</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Your local employment partner</span>
+          <h1>Find the right job. <span>Build your future.</span></h1>
+          <p>Kongu Jobs connects job seekers with employment opportunities and helps employers find suitable candidates in and around Udumalpet.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#register"><i class="fa-solid fa-user-plus"></i> Register as a Candidate</a>
+            <a class="btn btn-secondary" href="#employers"><i class="fa-solid fa-briefcase"></i> Hire Employees</a>
+          </div>
+          <div class="trust-row">
+            <span><i class="fa-solid fa-circle-check"></i>Candidate registration</span>
+            <span><i class="fa-solid fa-handshake"></i>Employer support</span>
+            <span><i class="fa-solid fa-location-dot"></i>Local assistance</span>
+          </div>
+        </div>
+        <div class="hero-art">
+          <img class="hero-logo" src="logo.png" alt="Kongu Jobs logo showing career growth and employment">
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container about-grid">
+        <div class="section-head">
+          <span class="eyebrow">About Kongu Jobs</span>
+          <h2>Bringing people and opportunities together.</h2>
+          <p>We aim to make the job search and hiring process easier by connecting candidates and employers. Share your profile or hiring needs with our agency so we can understand what you are looking for.</p>
+        </div>
+        <div class="about-panel">
+          <h3>A connection for your next step</h3>
+          <p>Whether you are starting your career, looking for a new role, or hiring for your business, our agency welcomes your enquiry.</p>
+          <ul class="check-list">
+            <li><i class="fa-solid fa-check"></i>Support for job seekers</li>
+            <li><i class="fa-solid fa-check"></i>Hiring enquiries from employers</li>
+            <li><i class="fa-solid fa-check"></i>Convenient WhatsApp contact</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="soft-section" id="jobs">
+      <div class="container">
+        <div class="section-head center">
+          <span class="eyebrow">Explore opportunities</span>
+          <h2>Job Categories</h2>
+          <p>Choose a category that matches your interests and mention your preferred role in the registration form.</p>
+        </div>
+        <div class="notice"><i class="fa-solid fa-circle-info"></i>These are example categories, not confirmed current vacancies. Please contact Kongu Jobs to check available openings.</div>
+        <div class="cards">
+          <article class="card">
+            <div class="icon-box"><i class="fa-solid fa-laptop-code"></i></div>
+            <span class="tag">Example category</span>
+            <h3>IT & Computer Roles</h3>
+            <p>Computer operator, data entry, technical support and related roles.</p>
+            <a class="text-link" href="#register">Register interest <i class="fa-solid fa-arrow-right"></i></a>
+          </article>
+          <article class="card">
+            <div class="icon-box"><i class="fa-solid fa-calculator"></i></div>
+            <span class="tag">Example category</span>
+            <h3>Office & Accounts</h3>
+            <p>Office assistant, receptionist, accounts assistant and administrative roles.</p>
+            <a class="text-link" href="#register">Register interest <i class="fa-solid fa-arrow-right"></i></a>
+          </article>
+          <article class="card">
+            <div class="icon-box"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+            <span class="tag">Example category</span>
+            <h3>Skilled & General Jobs</h3>
+            <p>Technician, sales, production, service and other general job categories.</p>
+            <a class="text-link" href="#register">Register interest <i class="fa-solid fa-arrow-right"></i></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="register">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Candidate registration</span>
+          <h2>Take the first step towards your next job.</h2>
+          <p>Enter your details and continue to WhatsApp to send your application to Kongu Jobs.</p>
+        </div>
+        <div class="form-layout">
+          <aside class="form-aside">
+            <div class="icon-box"><i class="fa-brands fa-whatsapp"></i></div>
+            <h3>How to submit your application</h3>
+            <ol>
+              <li>Fill in the form and choose your resume file.</li>
+              <li>Click “Continue to WhatsApp”.</li>
+              <li>In WhatsApp, attach your resume using the paperclip or + icon, then choose Document.</li>
+              <li>Select the resume file again and tap Send.</li>
+            </ol>
+            <p><strong>Important:</strong> WhatsApp links cannot attach files automatically. You must attach the resume in WhatsApp yourself.</p>
+          </aside>
+
+          <div class="form-panel">
+            <h3>Your details</h3>
+            <form id="candidateForm">
+              <div class="form-grid">
+                <div class="field full">
+                  <label for="fullName">Full name *</label>
+                  <input id="fullName" name="fullName" required maxlength="100" autocomplete="name" placeholder="Enter your full name">
+                </div>
+                <div class="field">
+                  <label for="mobile">Mobile number *</label>
+                  <input id="mobile" name="mobile" type="tel" required maxlength="20" autocomplete="tel" placeholder="Your mobile number">
+                </div>
+                <div class="field">
+                  <label for="email">Email address (Optional)</label>
+                  <input id="email" name="email" type="email" maxlength="150" autocomplete="email" placeholder="you@example.com">
+                </div>
+                <div class="field full">
+                  <!-- <label for="education">Education *</label> -->
+                  <!-- <input id="education" name="education" required maxlength="150" placeholder="e.g. B.Com, B.E., Diploma"> -->
+                   <label for="education">Educational Qualification *</label>
+                <select id="education" required>
+                    <option value="" disabled selected>
+                        Select your qualification...
+                    </option>
+                    <option value="General">General</option>
+                    <option value="SSLC">SSLC (10th)</option>
+                    <option value="+2 / HSC">+2 / HSC (12th)</option>
+                    <option value="UG">UG (Undergraduate)</option>
+                    <option value="PG">PG (Postgraduate)</option>
+                    <option value="Others">Others</option>
+                </select>
+                </div>
+                <div class="field full">
+                  <label for="skills">Skills (Optional)</label>
+                  <textarea id="skills" name="skills" maxlength="1000" rows="3" placeholder="Enter your skills"></textarea>
+                </div>
+                <div class="field">
+                  <label for="experience">Experience *</label>
+                  <select id="experience" name="experience" required>
+                    <option value="">Select experience</option>
+                    <option>Fresher</option>
+                    <option>Less than 1 year</option>
+                    <option>1–3 years</option>
+                    <option>3–5 years</option>
+                    <option>More than 5 years</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="preferredJob">Preferred job *</label>
+                  <!-- <input id="preferredJob" name="preferredJob" required maxlength="150" placeholder="Role you want"> -->
+                  <select id="preferredJob" name="preferredJob" required>
+                    <option value="">Select jobs</option>
+                    <option>Office Admin</option>
+                    <option>Accoutant</option>
+                    <option>Telecalling</option>
+                    <option>Sales</option>
+                    <option>Marketing</option>
+                    <option>Others</option>
+                  </select>
+                </div>
+                <div class="field full">
+                  <label for="resume">Resume file (Send by whatsapp)</label>
+                  <input id="resume" name="resume" type="file" accept=".pdf,.doc,.docx">
+                  <span id="resumeStatus" class="help">Accepted formats: PDF, DOC, DOCX.</span>
+                </div>
+                <div class="field full">
+                  <label class="consent" for="consent">
+                    <input id="consent" type="checkbox" required>
+                    <span>I agree to share these details with Kongu Jobs for employment-related contact.</span>
+                  </label>
+                </div>
+              </div>
+              <button class="btn btn-primary" type="submit"><i class="fa-brands fa-whatsapp"></i> Register</button>
+              <p id="formStatus" class="form-status" role="status" aria-live="polite"></p>
+              <p class="help">Your resume is not uploaded by this website. After WhatsApp opens, attach the same file there before sending your message.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="soft-section" id="employers">
+      <div class="container">
+        <div class="section-head center">
+          <span class="eyebrow">For employers</span>
+          <h2>Looking for the right employees?</h2>
+          <p>Contact us with your company name, job role, number of openings, required skills and experience level.</p>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <div class="icon-box"><i class="fa-solid fa-clipboard-list"></i></div>
+            <h3>Share your requirement</h3>
+            <p>Tell us about the position and skills needed for your vacancy.</p>
+          </article>
+          <article class="card">
+            <div class="icon-box"><i class="fa-solid fa-people-group"></i></div>
+            <h3>Discuss candidates</h3>
+            <p>Contact our agency to discuss your recruitment requirements.</p>
+          </article>
+          <article class="card">
+            <div class="icon-box"><i class="fa-solid fa-comments"></i></div>
+            <h3>Contact us directly</h3>
+            <p>Start an enquiry by phone, email or WhatsApp.</p>
+          </article>
+        </div>
+        <div class="actions" style="justify-content:center">
+          <a class="btn btn-primary" href="https://wa.me/917373537833?text=Hello%20Kongu%20Jobs%2C%20I%20am%20an%20employer%20with%20a%20hiring%20requirement." target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> Discuss a Hiring Requirement</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-head center">
+          <span class="eyebrow">Get in touch</span>
+          <h2>Contact Kongu Jobs</h2>
+          <p>We welcome enquiries from job seekers and employers.</p>
+        </div>
+        <div class="cards contact-grid">
+          <article class="card">
+            <div class="icon-box"><i class="fa-solid fa-location-dot"></i></div>
+            <h3>Visit our office</h3>
+            <p>Kongu Jobs, UKP-Complex, near CSE Computer Education, Udumalpet.</p>
+            <a class="text-link" href="https://www.google.com/maps/search/?api=1&query=UKP-Complex+near+CSE+Computer+Education+Udumalpet" target="_blank" rel="noopener">Find on Maps <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          </article>
+          <article class="card">
+            <div class="icon-box"><i class="fa-solid fa-phone"></i></div>
+            <h3>Call us</h3>
+            <p>Speak with our employment agency.</p>
+            <a class="text-link" href="tel:+917373537833">7373537833 <i class="fa-solid fa-arrow-right"></i></a>
+          </article>
+          <article class="card">
+            <div class="icon-box"><i class="fa-solid fa-envelope"></i></div>
+            <h3>Email us</h3>
+            <p>Send your employment enquiry by email.</p>
+            <a class="text-link" href="mailto:cseemploymentagency@gmail.com">Send an email <i class="fa-solid fa-arrow-right"></i></a>
+          </article>
+        </div>
+        <div class="whatsapp-band">
+          <div>
+            <h3><i class="fa-brands fa-whatsapp" style="color:#16823b"></i> Prefer WhatsApp?</h3>
+            <p>Message Kongu Jobs directly at 7373537833.</p>
+          </div>
+          <a class="btn btn-primary" href="https://wa.me/917373537833" target="_blank" rel="noopener">Chat on WhatsApp <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> Kongu Jobs Employment Agency. All rights reserved.</span>
+      <span>UKP-Complex, Udumalpet · <a href="tel:+917373537833">7373537833</a></span>
+    </div>
+  </footer>
+
+  <a class="floating-wa" href="https://wa.me/917373537833" target="_blank" rel="noopener" aria-label="Chat with Kongu Jobs on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const form = document.getElementById("candidateForm");
+    const resumeInput = document.getElementById("resume");
+    const resumeStatus = document.getElementById("resumeStatus");
+    const formStatus = document.getElementById("formStatus");
+    const AGENCY_WHATSAPP_NUMBER = "917373537833";
+
+    resumeInput.addEventListener("change", function () {
+      const file = resumeInput.files && resumeInput.files[0];
+      if (!file) {
+        resumeStatus.textContent = "Accepted formats: PDF, DOC, DOCX.";
+        return;
+      }
+      const allowed = /\.(pdf|doc|docx)$/i.test(file.name);
+      if (!allowed) {
+        resumeInput.value = "";
+        resumeStatus.textContent = "Please choose a PDF, DOC, or DOCX file.";
+        return;
+      }
+      resumeStatus.textContent = "Selected: " + file.name + " — remember to attach it again in WhatsApp.";
+    });
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+      formStatus.textContent = "";
+
+      if (!form.reportValidity()) return;
+
+      
+const file = resumeInput.files && resumeInput.files[0];
+
+if (file && !/\.(pdf|doc|docx)$/i.test(file.name)) {
+  formStatus.textContent =
+    "Please choose a PDF, DOC, or DOCX resume, or leave the field empty.";
+  resumeInput.focus();
+  return;
+}
+
+
+      const val = id => document.getElementById(id).value.trim();
+      const message =
+        "KONGU JOBS - CANDIDATE REGISTRATION\n\n" +
+        "Full name: " + val("fullName") + "\n" +
+        "Mobile: " + val("mobile") + "\n" +
+        // "Email: " + (val("email") || "Not provided") + "\n" +
+        "Education: " + val("education") + "\n" +
+        "Skills: " + val("skills") + "\n" +
+        "Experience: " + val("experience") + "\n" +
+        "Preferred job: " + val("preferredJob") + "\n" 
+        // "Resume filename: " + file.name + "\n\n" +
+        // "I will attach my resume file in this WhatsApp chat.";
+
+      const whatsappUrl = "https://wa.me/" + AGENCY_WHATSAPP_NUMBER +
+        "?text=" + encodeURIComponent(message);
+
+      const opened = window.open(whatsappUrl, "_blank");
+      if (!opened) {
+        window.location.href = whatsappUrl;
+      }
+
+      formStatus.textContent = "WhatsApp is opening. In that chat, attach " + file.name +
+        " using the attachment (+ or paperclip) icon, choose Document, then tap Send.";
+    });
+  </script>
+</body>
+</html>
